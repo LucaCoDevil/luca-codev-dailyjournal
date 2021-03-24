@@ -5,7 +5,7 @@ const ejs = require("ejs");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 
-let port = process.env.PORT || 5000;
+let PORT = process.env.PORT || 5000;
 
 const homeStartingContent =
     " Welcome to the Daily Journal home page. From here you can view posts, seperating them into individual pages to make things a bit neater. From the Compose page one can add a new post which gets saved into our database. Please keep posts user friendly, nothing too crass!  ";
@@ -25,7 +25,7 @@ app.use(express.static("public"));
 
 //database
 mongoose.connect(
-    MONGODB_URI || "mondodb//:localhost:27017/posts", {
+    process.env.MONGODB_URI || "mongodb://localhost:27017/posts", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     }
@@ -125,7 +125,6 @@ app
         Post.findOneAndDelete(reqPostId, (err) => {
             if (!err) {
                 res.redirect("/");
-                console.log("deleted");
             } else {
                 console.log(err);
             }
@@ -133,6 +132,6 @@ app
     });
 });
 
-app.listen(port, function() {
-    console.log("Server started successfully");
+app.listen(PORT, function() {
+    console.log(`server started on port ${PORT}`);
 });
