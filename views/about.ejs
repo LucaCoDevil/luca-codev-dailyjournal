@@ -1,0 +1,14 @@
+<%- include("partials/header")-%>
+
+<h1>About</h1>
+<p><%= aboutContent %></p>
+
+<h2>Languages & Dependencies:</h2>
+
+<ul>
+    <%arr.forEach(function (element) {%>
+    <li class="about-item"><%=element%></li>
+    <%})%>
+</ul>
+
+<%- include("partials/footer")-%>

@@ -1,0 +1,23 @@
+<%- include("partials/header")-%>
+
+    <h1>Home</h1>
+    <p>
+        <%= startingContent %>
+    </p>
+    <% posts.forEach(function(post){ %>
+        <div class="h2-username">
+            <h2 class="post-title">
+                <%= post.postTitle %>
+            </h2>
+            <p class="username">
+                ~
+                <%= post.username%>
+            </p>
+        </div>
+        <p>
+            <%= post.postBody.substring(0,100) + "..." %>
+                <a href="/posts/<%= post._id %>" class="read-more">Read more</a>
+        </p>
+
+        <% }) %>
+            <%- include("partials/footer")-%>
