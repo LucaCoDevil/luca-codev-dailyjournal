@@ -7,10 +7,9 @@ const _ = require("lodash");
 
 let PORT = process.env.PORT || 5000;
 
-const homeStartingContent =
-    " Welcome to the Daily Journal home page. From here you can view posts, seperating them into individual pages to make things a bit neater. From the Compose page one can add a new post which gets saved into our database. Please keep posts user friendly, nothing too crass!  ";
+const homeStartingContent = " Welcome to the Daily Journal home page. From here you can view posts, separating them into individual pages to make things a bit neater. From the Compose page one can add a new post which gets saved into our database. Please keep posts user friendly.";
 const aboutContent =
-    "This is a blog webApp where one can compose a post consisting of a title and a body. Once the creation process is handled by the server and the post is added to the MongoDB database, the page is redirected to the home route where the post is displayed. Each post body on the home route is cut to be 100 characters. A read more button is displayed to take the user to a seperate page (this page and all the others are created through the use of custom ejs tempelates) in order to view the full post, from here the post can also be removed from the database. ";
+"This is a blog webApp where one can compose a post consisting of a title and a body. Once the creation process is handled by the server and the post is added to the MongoDB database, the page is redirected to the home route where the post is displayed. Each post body on the home route is cut to be 100 characters. A read more button is displayed to take the user to a separate page (this page and all the others are created through the use of custom ejs templates) in order to view the full post, from here the post can also be removed from the database.";
 
 const app = express();
 
